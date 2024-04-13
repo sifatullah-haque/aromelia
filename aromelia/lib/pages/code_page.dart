@@ -11,9 +11,7 @@ class CodePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorIs.backgroundColor,
       appBar: AppBar(
-        backgroundColor: ColorIs.backgroundColor,
         toolbarHeight: 20.h,
       ),
       body: Padding(

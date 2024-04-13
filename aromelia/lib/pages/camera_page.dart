@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:aromelia/constant/color_is.dart';
+import 'package:aromelia/pages/loading_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
@@ -29,9 +30,7 @@ class _CameraPageState extends State<CameraPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorIs.backgroundColor,
       appBar: AppBar(
-        backgroundColor: ColorIs.backgroundColor,
         toolbarHeight: 20.h,
         elevation: 0,
       ),
@@ -118,6 +117,10 @@ class _CameraPageState extends State<CameraPage> {
 
   void _submit() {
     // Implement your submit functionality here
-    print("Submitting image...");
+    Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => LoadingPage(),
+        ));
   }
 }
