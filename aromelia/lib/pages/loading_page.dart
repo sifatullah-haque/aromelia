@@ -1,12 +1,25 @@
 import 'package:aromelia/constant/color_is.dart';
+import 'package:aromelia/pages/recommended/recommendations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoadingPage extends StatelessWidget {
-  const LoadingPage({super.key});
+  const LoadingPage({Key? key});
 
   @override
   Widget build(BuildContext context) {
+    // Add Future.delayed to wait for 2 seconds
+    Future.delayed(Duration(seconds: 2), () {
+      // After 2 seconds, navigate to the next page
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) =>
+              RecommendationsPage(), // Replace YourNextPage with the name of your next page
+        ),
+      );
+    });
+
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0),

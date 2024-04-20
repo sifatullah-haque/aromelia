@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:aromelia/constant/color_is.dart';
+import 'package:aromelia/pages/hair_servey.dart';
 import 'package:aromelia/pages/loading_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -120,7 +121,9 @@ class _CameraPageState extends State<CameraPage> {
     Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => LoadingPage(),
+          builder: (context) => HairSurveyBody(
+            selectImage: _imageFile,
+          ),
         ));
   }
 }

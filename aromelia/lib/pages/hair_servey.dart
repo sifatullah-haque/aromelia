@@ -1,16 +1,24 @@
+import 'dart:io';
+
 import 'package:aromelia/constant/color_is.dart';
 import 'package:aromelia/constant/color_toggle.dart';
 import 'package:aromelia/constant/second_selectable_container.dart';
 import 'package:aromelia/constant/selectable_container.dart';
 import 'package:aromelia/pages/state_management/hair_survey_state.dart';
+import 'package:aromelia/result.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
 class HairSurveyBody extends StatelessWidget {
-  const HairSurveyBody({Key? key}) : super(key: key);
+  final File? selectImage;
+  const HairSurveyBody({
+    Key? key,
+    required this.selectImage,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +43,18 @@ class HairSurveyBody extends StatelessWidget {
     if (hairSurveyState.containerColorsLast
         .any((color) => color == ColorIs.colorSelected)) {
       progress += 0.25;
+    }
+    if (progress == 1.0) {
+      Future.delayed(Duration.zero, () {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ResultPage(
+              selectImages: selectImage,
+            ),
+          ),
+        );
+      });
     }
 
     return Scaffold(

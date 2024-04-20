@@ -1,6 +1,10 @@
+import 'package:aromelia/pages/code_page.dart';
 import 'package:aromelia/pages/hair_servey.dart';
+import 'package:aromelia/pages/recommended/recommendations.dart';
 import 'package:aromelia/pages/state_management/hair_survey_state.dart';
 import 'package:aromelia/pages/test.dart';
+import 'package:aromelia/result.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
@@ -24,7 +28,7 @@ class MyApp extends StatelessWidget {
             theme: ThemeData(
               primarySwatch: Colors.blue,
             ),
-            home: const HairSurveyBody(),
+            home: const CodePage(),
           ),
         );
       },

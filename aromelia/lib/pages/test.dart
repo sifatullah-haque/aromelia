@@ -5,12 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class RecommendationsPage extends StatefulWidget {
+class test extends StatefulWidget {
   @override
   _CustomTabBarDemoState createState() => _CustomTabBarDemoState();
 }
 
-class _CustomTabBarDemoState extends State<RecommendationsPage> {
+class _CustomTabBarDemoState extends State<test> {
   int _selectedTabIndex = 0;
 
   void _onTabTapped(int index) {
@@ -144,7 +144,7 @@ class _CustomTabBarDemoState extends State<RecommendationsPage> {
                                     ? const RecommendationsDetails()
                                     : _selectedTabIndex == 9
                                         ? const RecommendationsDetails()
-                                        : Text("No recommendations for Today"),
+                                        : const SizedBox(),
               ),
             ),
           ],
